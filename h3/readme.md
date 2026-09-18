@@ -33,4 +33,45 @@ flowchart TB
 * La **Dueña** utiliza el sistema para administrar y consultar información.
 * El **Sistema** envía información a la **Impresora** para generar comprobantes y reportes.
 
+   ## Nivel 2 — Contenedores (el zoom adentro del sistema)
+
+```mermaid
+flowchart LR
+
+    encargada["👩 Encargada<br><br>Registra ventas<br>Administra productos<br>Controla inventario"]
+
+    dueña["👩‍💼 Dueña<br><br>Administra usuarios<br>Consulta ventas<br>Consulta inventario<br>Genera reportes"]
+
+    subgraph sistema["📚 SISTEMA DE TIENDA E INVENTARIO PARA LIBRERÍA"]
+
+        webapp["🌐 APLICACIÓN WEB<br><br>PHP + HTML + CSS<br><br>Login · Ventas · Productos<br>Inventario · Reportes"]
+
+        api["⚙️ API / LÓGICA DE NEGOCIO<br><br>PHP<br><br>Reglas de ventas e inventario<br>Gestión de productos y usuarios<br>Generación de reportes<br><br>🔄 Strategy · 🔔 Observer"]
+
+        bd[("🗄️ BASE DE DATOS<br><br>MySQL<br><br>Usuarios · Productos<br>Ventas · Inventario<br>Movimientos")]
+
+    end
+
+    impresora["🖨️ Impresora<br>Externa"]
+
+    encargada -->|"utiliza"| webapp
+    dueña -->|"utiliza"| webapp
+
+    webapp -->|"solicita operaciones"| api
+    api -->|"guarda y consulta"| bd
+
+    api -->|"genera comprobantes y reportes"| impresora
+```
+
+### 🔄 Relación entre los contenedores
+
+La Encargada y la Dueña utilizan la **Aplicación Web**.
+
+La Aplicación Web envía las solicitudes a la **API / Lógica de Negocio**.
+
+La API procesa las reglas del sistema y se comunica con la **Base de Datos** para guardar o consultar información.
+
+Cuando se necesita generar un comprobante o reporte físico, la aplicación envía la información a la **Impresora**.
+
+
 
