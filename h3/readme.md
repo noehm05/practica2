@@ -1,9 +1,6 @@
-## Nivel 1 — Contexto del sistema
+## Nivel 1 — Contexto del sistema TIENDA CON INVENTARIO (LIBRERIA) NOELIA HUANCA MAMANI
 
-### ¿Quién usa el sistema y con qué elementos externos se relaciona?
-
-En este nivel mostramos el sistema de la librería desde una vista general. La idea es identificar quiénes utilizan el sistema y qué elementos externos tienen relación con él, sin entrar todavía en clases, módulos o detalles internos.
-
+En este nivel mostramos el sistema de la librería desde una vista general. 
 ```mermaid
 flowchart TB
 
@@ -36,16 +33,4 @@ flowchart TB
 * La **Dueña** utiliza el sistema para administrar y consultar información.
 * El **Sistema** envía información a la **Impresora** para generar comprobantes y reportes.
 
-### ¿Qué no mostramos todavía?
 
-En este nivel no mostramos las clases, atributos, métodos ni las tablas de la base de datos. Tampoco mostramos cómo está programado internamente el sistema.
-
-Esto se debe a que el Nivel 1 solamente busca mostrar **el sistema y su entorno**, dejando los detalles internos para el siguiente nivel.
-
-### Regla del Nivel 1
-
-La idea es responder principalmente:
-
-> **¿Quién utiliza el sistema y con qué elementos externos se relaciona?**
-
-Por eso mantenemos una vista general del sistema. En el **Nivel 2** podremos abrir el sistema y mostrar las partes que lo componen, como la aplicación web, la lógica de negocio y la base de datos.
