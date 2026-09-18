@@ -34,7 +34,7 @@ flowchart TB
 * El **Sistema** envía información a la **Impresora** para generar comprobantes y reportes.
 
    ## Nivel 2 — Contenedores (el zoom adentro del sistema)
-
+La pregunta que responde: ¿de qué piezas ejecutables/almacenes está hecho el sistema? Cada contenedor es algo que corre o almacena: la aplicación web, la base de datos, un servicio.
 ```mermaid
 flowchart LR
 
