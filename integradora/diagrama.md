@@ -1,9 +1,4 @@
 # DIAGRAMA DE CLASES – PARQUEO TORRE CENTRAL
-
-**Nombre:** Noelia Huanca M.  
-**Materia:** Arquitectura de Software  
-**Evaluación Integradora – Variante B**
-
 ```mermaid
 classDiagram
 direction LR
@@ -65,8 +60,4 @@ Estadia --> Aviso : aviso >24h
 
 note for ReporteMensual "NOELIA HUANCA MAMANI"
 ```
-
-### Nota
-
-Diagrama realizado a partir de los requerimientos del caso, identificando las clases, métodos y relaciones principales.
 
