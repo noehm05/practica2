@@ -1,6 +1,5 @@
 # DIAGRAMA DE CLASES – PARQUEO TORRE CENTRAL
 ```mermaid
-flowchart TB
 classDiagram
 direction LR
 
