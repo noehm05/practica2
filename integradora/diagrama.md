@@ -6,7 +6,7 @@
 
 ```mermaid
 classDiagram
-direction TB
+direction LR
 
 class Vehiculo {
     +placa : String
@@ -14,12 +14,12 @@ class Vehiculo {
 }
 
 class Estadia {
+    +idEstadia : int
     +fechaEntrada : DateTime
     +fechaSalida : DateTime
     +horas : int
     +total : decimal
-    +calcularTotal()
-    +cambiarEstado()
+    +calcularPago()
 }
 
 class EstadoEstadia {
@@ -28,10 +28,6 @@ class EstadoEstadia {
     PorPagar
     Pagada
     Anulada
-}
-
-class Tarifa {
-    +precioHora : decimal
 }
 
 class Portero {
@@ -45,6 +41,11 @@ class Administrador {
     +generarReporte()
 }
 
+class Tarifa {
+    +tipoVehiculo : String
+    +precioHora : decimal
+}
+
 class Aviso {
     +enviarAviso()
 }
@@ -53,19 +54,16 @@ class ReporteMensual {
     +generarIngresosPorTipo()
 }
 
-Vehiculo "1" --> "0..*" Estadia : tiene
-Estadia --> EstadoEstadia : estado
-Estadia --> Tarifa : usa
-
+Vehiculo "1" --> "0..*" Estadia : registra
+Estadia --> EstadoEstadia : tiene
+Estadia --> Tarifa : calcula
 Portero --> Estadia : registra
 Administrador --> Tarifa : ajusta
 Administrador --> Estadia : anula
 Administrador --> ReporteMensual : genera
+Estadia --> Aviso : aviso >24h
 
-Estadia --> Aviso : mas de 24 horas
-
-note for Vehiculo "Noelia Huanca M."
-```
+note for ReporteMensual "NOELIA HUANCA MAMANI"
 
 ### Nota
 
