@@ -1,5 +1,7 @@
-DIAGRAMA DE CLASES – PARQUEO TORRE CENTRAL
+# DIAGRAMA DE CLASES – PARQUEO TORRE CENTRAL
+## Diagrama
 
+```mermaid
 classDiagram
 direction LR
 
@@ -9,12 +11,12 @@ class Vehiculo {
 }
 
 class Estadia {
-    +idEstadia : int
     +fechaEntrada : DateTime
     +fechaSalida : DateTime
     +horas : int
     +total : decimal
-    +calcularPago()
+    +calcularTotal()
+    +cambiarEstado()
 }
 
 class EstadoEstadia {
@@ -37,7 +39,6 @@ class Administrador {
 }
 
 class Tarifa {
-    +tipoVehiculo : String
     +precioHora : decimal
 }
 
@@ -49,15 +50,15 @@ class ReporteMensual {
     +generarIngresosPorTipo()
 }
 
-Vehiculo "1" --> "0..*" Estadia : registra
-Estadia --> EstadoEstadia : tiene
-Estadia --> Tarifa : calcula
+Vehiculo "1" --> "0..*" Estadia : tiene
+Estadia --> EstadoEstadia : estado
+Estadia --> Tarifa : usa
 Portero --> Estadia : registra
 Administrador --> Tarifa : ajusta
 Administrador --> Estadia : anula
 Administrador --> ReporteMensual : genera
-Estadia --> Aviso : aviso >24h
+Estadia --> Aviso : >24 horas
 
-note for ReporteMensual "NOELIA HUANCA MAMANI"
+note for Vehiculo "Noelia Huanca Mamani"
+```
 
-Este diagrama se realizo a partir de los requerimientos del caso.
