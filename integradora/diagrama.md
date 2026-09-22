@@ -64,6 +64,7 @@ Administrador --> ReporteMensual : genera
 Estadia --> Aviso : aviso >24h
 
 note for ReporteMensual "NOELIA HUANCA MAMANI"
+```
 
 ### Nota
 
