@@ -1,9 +1,12 @@
 # DIAGRAMA DE CLASES – PARQUEO TORRE CENTRAL
-## Diagrama
+
+**Nombre:** Noelia Huanca M.  
+**Materia:** Arquitectura de Software  
+**Evaluación Integradora – Variante B**
 
 ```mermaid
 classDiagram
-direction LR
+direction TB
 
 class Vehiculo {
     +placa : String
@@ -27,6 +30,10 @@ class EstadoEstadia {
     Anulada
 }
 
+class Tarifa {
+    +precioHora : decimal
+}
+
 class Portero {
     +registrarEntrada()
     +registrarSalida()
@@ -36,10 +43,6 @@ class Administrador {
     +ajustarTarifa()
     +anularEstadia()
     +generarReporte()
-}
-
-class Tarifa {
-    +precioHora : decimal
 }
 
 class Aviso {
@@ -53,12 +56,18 @@ class ReporteMensual {
 Vehiculo "1" --> "0..*" Estadia : tiene
 Estadia --> EstadoEstadia : estado
 Estadia --> Tarifa : usa
+
 Portero --> Estadia : registra
 Administrador --> Tarifa : ajusta
 Administrador --> Estadia : anula
 Administrador --> ReporteMensual : genera
-Estadia --> Aviso : >24 horas
 
-note for Vehiculo "Noelia Huanca Mamani"
+Estadia --> Aviso : mas de 24 horas
+
+note for Vehiculo "Noelia Huanca M."
 ```
+
+### Nota
+
+Diagrama realizado a partir de los requerimientos del caso, identificando las clases, métodos y relaciones principales.
 
